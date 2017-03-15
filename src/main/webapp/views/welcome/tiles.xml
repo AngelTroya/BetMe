@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles.xml
+ *
+* Copyright (C) 2014 Paperbet S.A.
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="welcome/index" extends="master.page">	
+		<put-attribute name="body" value="/views/welcome/index.jsp" />
+	</definition>
+	
+</tiles-definitions>

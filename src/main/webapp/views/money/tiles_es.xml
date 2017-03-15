@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles.xml
+ *
+ * Copyright (C) 2014 Paperbet S.A.
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="money/wallet" extends="master.page">	
+		<put-attribute name="title" value="Mi monedero" />
+		<put-attribute name="body" value="/views/money/wallet.jsp" />
+	</definition>
+	
+	<definition name="money/deposit" extends="master.page">	
+		<put-attribute name="title" value="Ingresar dinero" />
+		<put-attribute name="body" value="/views/money/deposit.jsp" />
+	</definition>
+	
+	<definition name="money/withdraw" extends="master.page">	
+		<put-attribute name="title" value="Retirar dinero" />
+		<put-attribute name="body" value="/views/money/withdraw.jsp" />
+	</definition>
+	
+</tiles-definitions>

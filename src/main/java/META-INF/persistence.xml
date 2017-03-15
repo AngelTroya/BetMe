@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	
+	<persistence-unit name="BetMe">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>domain.Actor</class>
+		<class>domain.Admin</class>
+		<class>domain.AgainstTheOperator</class>
+		<class>domain.Bet</class>
+		<class>domain.BetOption</class>
+		<class>domain.Comment</class>
+		<class>domain.Configuration</class>
+		<class>domain.DomainEntity</class>
+		<class>domain.Gamble</class>
+		<class>domain.Moderator</class>
+		<class>domain.ReportBet</class>
+		<class>domain.ReportUser</class>
+		<class>domain.User</class>
+		<class>domain.UserVote</class>
+		<class>domain.WinWinForBoth</class>
+		<class>security.Authority</class>
+		<class>security.UserAccount</class>
+
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/betme" />
+			<property name="javax.persistence.jdbc.user" value="admin" />
+			<property name="javax.persistence.jdbc.password" value="Bet-Me-Admin" />
+
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.cglib.use_reflection_optimizer" value="true" />
+			
+			<property name="hibernate.search.default.directory_provider" value="filesystem" />
+            <property name="hibernate.search.default.indexBase" value="C:/lucene/indexes/index" />
+		</properties>
+
+	</persistence-unit>
+	
+</persistence>

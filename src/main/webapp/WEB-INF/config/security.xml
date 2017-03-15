@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * security.xml 
+ * 
+ * Copyright (C) 2014 Paperbet S.A.
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"	
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd		
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+    ">
+
+	<!-- Security infrastructure -->
+
+	<bean id="loginService" class="security.LoginService" />
+
+	<bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
+
+	<!-- Access control -->
+
+	<security:http auto-config="true" use-expressions="true">
+		<security:intercept-url pattern="/" access="permitAll" />
+		<security:intercept-url pattern="/favicon.ico" access="permitAll" />
+		<security:intercept-url pattern="/images/**" access="permitAll" />
+		<security:intercept-url pattern="/scripts/**" access="permitAll" />
+		<security:intercept-url pattern="/styles/**" access="permitAll" />
+		<security:intercept-url pattern="/views/misc/index.jsp" access="permitAll" />		
+
+		<security:intercept-url pattern="/security/login.do" access="permitAll" />
+		<security:intercept-url pattern="/security/loginFailure.do" access="permitAll" />
+
+		<security:intercept-url pattern="/welcome/index.do" access="permitAll" />
+		
+		<security:intercept-url pattern="/user/register.do" access="permitAll" />
+		<security:intercept-url pattern="/user/createUser.do" access="permitAll" />
+		<security:intercept-url pattern="/user/checkUsername.do" access="permitAll" />
+		<security:intercept-url pattern="/user/showdetails.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/user/editdetails.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/user/delete.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/user/uploadPhoto.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/user/streamPhoto.do" access="permitAll" />
+		<security:intercept-url pattern="/user/voteCommentPos.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/user/voteCommentNeg.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/user/voteBetPos.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/user/voteBetNeg.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/user/report.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/user/changePass.do" access="hasRole('CUSTOMER')" />
+		
+		<security:intercept-url pattern="/gamble/showactive.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/gamble/showpast.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/gamble/gamble.do" access="hasRole('CUSTOMER')" />
+		
+		<security:intercept-url pattern="/bet/showProposedBets.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/bet/showBets.do" access="permitAll" />
+		<security:intercept-url pattern="/bet/seeDetails.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/bet/seePublicDetails.do" access="permitAll" />
+		<security:intercept-url pattern="/bet/propose.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/bet/search.do" access="permitAll" />
+		<security:intercept-url pattern="/bet/searchAjax.do" access="permitAll" />
+		<security:intercept-url pattern="/bet/edit.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/bet/report.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/bet/reportUser.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/bet/newComment.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/bet/deleteComment.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/bet/myProposedBets.do" access="hasRole('CUSTOMER')" />
+		
+		<security:intercept-url pattern="/money/wallet.do" access="hasRole('CUSTOMER')" />
+		<security:intercept-url pattern="/money/deposit.do" access="hasAnyRole('CUSTOMER', 'MODERATOR')" />
+		<security:intercept-url pattern="/money/withdraw.do" access="hasAnyRole('CUSTOMER', 'MODERATOR')" />
+		<security:intercept-url pattern="/money/paypalipn.do" access="permitAll" />
+		
+		<security:intercept-url pattern="/moderator/accepted.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/proposed.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/pending.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/rejected.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/betDetails.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/detailsAccepted.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/detailsProposed.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/detailsPending.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/detailsRejected.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/accept1.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/accept2.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/accept3.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/reject1.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/reject2.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/reject3.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/deleteComment.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/deleteBet.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/reports.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/users.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/disableUser.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/activeUser.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/bets.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/searchAjax.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/edit.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/deposit.do" access="hasRole('MODERATOR')" />
+		<security:intercept-url pattern="/moderator/withdraw.do" access="hasRole('MODERATOR')" />
+		
+		<security:intercept-url pattern="/**" access="hasRole('ADMIN')" />
+
+		<security:form-login login-page="/security/login.do"
+			password-parameter="password" username-parameter="username"
+			authentication-failure-url="/security/loginFailure.do" />
+
+		<security:logout logout-success-url="/" invalidate-session="true" />
+	</security:http>
+
+</beans>

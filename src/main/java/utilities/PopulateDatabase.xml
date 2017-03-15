@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * PopulateDatabase.xml
+ *
+ * Copyright (C) 2014 Paperbet S.A.
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	">
+	
+	<!-- User accounts -->
+
+	<bean id="userAccount1" class="security.UserAccount">
+		<property name="username" value="admin" />
+		<property name="password" value="21232f297a57a5a743894a0e4a801fc3" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+				<bean class="security.Authority">
+					<property name="authority" value="MODERATOR" />
+				</bean>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount2" class="security.UserAccount">
+		<property name="username" value="javier" />
+		<property name="password" value="3c9c03d6008a5adf42c2a55dd4a1a9f2" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="userAccount3" class="security.UserAccount">
+		<property name="username" value="moderator" />
+		<property name="password" value="0408f3c997f309c03b08bf3a4bc7b730" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MODERATOR" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount4" class="security.UserAccount">
+		<property name="username" value="pablo" />
+		<property name="password" value="7e4b64eb65e34fdfad79e623c44abd94" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount5" class="security.UserAccount">
+		<property name="username" value="antonio" />
+		<property name="password" value="4a181673429f0b6abbfd452f0f3b5950" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount6" class="security.UserAccount">
+		<property name="username" value="miguel" />
+		<property name="password" value="9eb0c9605dc81a68731f61b3e0838937" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount7" class="security.UserAccount">
+		<property name="username" value="angel" />
+		<property name="password" value="f4f068e71e0d87bf0ad51e6214ab84e9" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="userAccount8" class="security.UserAccount">
+		<property name="username" value="jesus" />
+		<property name="password" value="110d46fcd978c24f306cd7fa23464d73" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="CUSTOMER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Other domain beans come here -->	
+	
+	<bean id="admin1" class="domain.Admin">
+		<property name="name" value="Garrido" />
+		<property name="surname" value="Garridez" />
+		<property name="email" value="frostmur22@gmail.com"/>
+		<property name="phone" value="695820268"/>
+		<property name="address" value="Calle falsa 123" />
+		<property name="dateOfBirth" value="01/02/2015"/>
+		<property name="zipCode" value="41930"/>
+		<property name="dni" value="29491899B"/>
+		<property name="sex" value="0" />
+		<property name="province" value="Sevilla"/>
+		<property name="userAccount" ref="userAccount1"/>
+	</bean>
+	
+	<bean id="user1" class="domain.User">
+		<property name="name" value="Javier" />
+		<property name="surname" value="Garrido" />
+		<property name="email" value="garrido@gmail.com"/>
+		<property name="phone" value="695820268"/>
+		<property name="address" value="Calle falsa 123" />
+		<property name="city" value="Sevilla" />
+		<property name="dateOfBirth" value="01/01/1990"/>
+		<property name="zipCode" value="41930"/>
+		<property name="dni" value="46266658L"/>
+		<property name="sex" value="0" />
+		<property name="province" value="Sevilla"/>
+		<property name="userAccount" ref="userAccount2"/>
+		<property name="karma" value="6.00"/>
+		<property name="money" value="50.00" />
+		<property name="image" value="" />
+		<property name="isReported" value="false" />
+		<property name="comments">
+			<list>
+				<ref bean="comment1"/>
+				<ref bean="comment2"/>
+				<ref bean="comment3"/>
+			</list>
+		</property>
+		<property name="gambles">
+			<list>
+				<ref bean="gamble1"/>
+				<ref bean="gamble2"/>
+			</list>
+		</property>
+		<property name="votes" ref="userVotes1" />
+	</bean>
+	
+	<bean id="user2" class="domain.User">
+		<property name="name" value="Pablo" />
+		<property name="surname" value="Barrientos" />
+		<property name="email" value="barrientos@gmail.com"/>
+		<property name="phone" value="628830481"/>
+		<property name="address" value="Calle inventada 123" />
+		<property name="city" value="San Fernando" />
+		<property name="dateOfBirth" value="01/02/1989"/>
+		<property name="zipCode" value="11100"/>
+		<property name="dni" value="49070704C"/>
+		<property name="sex" value="0" />
+		<property name="province" value="Cadiz"/>
+		<property name="userAccount" ref="userAccount4"/>
+		<property name="karma" value="6.00"/>
+		<property name="money" value="100.00" />
+		<property name="image" value="" />
+		<property name="isReported" value="false" />
+		<property name="comments">
+			<list>
+				<ref bean="comment4"/>
+				<ref bean="comment5"/>
+			</list>
+		</property>
+		<property name="votes" ref="userVotes2" />
+	</bean>
+	
+	<bean id="user3" class="domain.User">
+		<property name="name" value="Antonio" />
+		<property name="surname" value="Luna" />
+		<property name="email" value="luna@gmail.com"/>
+		<property name="phone" value="628830481"/>
+		<property name="address" value="Calle Santa Marina 123" />
+		<property name="city" value="Fernán-Núñez" />
+		<property name="dateOfBirth" value="04/09/1990"/>
+		<property name="zipCode" value="41010"/>
+		<property name="dni" value="04412015V"/>
+		<property name="sex" value="0" />
+		<property name="province" value="Córdoba"/>
+		<property name="userAccount" ref="userAccount5"/>
+		<property name="karma" value="6.00"/>
+		<property name="money" value="100.00" />
+		<property name="image" value="" />
+		<property name="isReported" value="false" />
+		<property name="votes" ref="userVotes3" />
+	</bean>
+	
+	<bean id="user4" class="domain.User">
+		<property name="name" value="Miguel" />
+		<property name="surname" value="Roth" />
+		<property name="email" value="roth@gmail.com"/>
+		<property name="phone" value="628830481"/>
+		<property name="address" value="Calle Imaginada 123" />
+		<property name="city" value="Sevilla" />
+		<property name="dateOfBirth" value="04/09/1990"/>
+		<property name="zipCode" value="41010"/>
+		<property name="dni" value="37049597R"/>
+		<property name="sex" value="0" />
+		<property name="province" value="Sevilla"/>
+		<property name="userAccount" ref="userAccount6"/>
+		<property name="karma" value="6.00"/>
+		<property name="money" value="80.00" />
+		<property name="image" value="" />
+		<property name="isReported" value="false" />
+		<property name="votes" ref="userVotes4" />
+	</bean>
+	
+	<bean id="user5" class="domain.User">
+		<property name="name" value="Ángel" />
+		<property name="surname" value="Troya" />
+		<property name="email" value="troya@gmail.com"/>
+		<property name="phone" value="628830481"/>
+		<property name="address" value="Calle Imaginada 123" />
+		<property name="city" value="Sevilla" />
+		<property name="dateOfBirth" value="04/02/1989"/>
+		<property name="zipCode" value="41010"/>
+		<property name="dni" value="07797890Q"/>
+		<property name="sex" value="0" />
+		<property name="province" value="Sevilla"/>
+		<property name="userAccount" ref="userAccount7"/>
+		<property name="karma" value="6.00"/>
+		<property name="money" value="50.00" />
+		<property name="image" value="" />
+		<property name="isReported" value="false" />
+		<property name="votes" ref="userVotes5" />
+	</bean>
+	
+	<bean id="user6" class="domain.User">
+		<property name="name" value="Jesús" />
+		<property name="surname" value="Sobrino" />
+		<property name="email" value="sobrino@gmail.com"/>
+		<property name="phone" value="628830481"/>
+		<property name="address" value="Calle Misteriosa 123" />
+		<property name="city" value="Sevilla" />
+		<property name="dateOfBirth" value="10/09/1989"/>
+		<property name="zipCode" value="41010"/>
+		<property name="dni" value="78733436C"/>
+		<property name="sex" value="0" />
+		<property name="province" value="Sevilla"/>
+		<property name="userAccount" ref="userAccount8"/>
+		<property name="karma" value="6.00"/>
+		<property name="money" value="150.00" />
+		<property name="image" value="" />
+		<property name="isReported" value="false" />
+		<property name="votes" ref="userVotes6" />
+	</bean>
+	
+	<bean id="moderator1" class="domain.Moderator">
+		<property name="name" value="Garrido" />
+		<property name="surname" value="Garridez" />
+		<property name="email" value="frostmur22@gmail.com"/>
+		<property name="phone" value="695820268"/>
+		<property name="address" value="Calle falsa 123" />
+		<property name="dateOfBirth" value="01/02/2015"/>
+		<property name="zipCode" value="41930"/>
+		<property name="dni" value="29491899B"/>
+		<property name="sex" value="0" />
+		<property name="province" value="Sevilla"/>
+		<property name="userAccount" ref="userAccount3"/>
+		<property name="bets">
+			<list>
+				<ref bean="bet1"/>
+				<ref bean="bet2"/>
+				<ref bean="bet3"/>
+				<ref bean="bet4"/>
+				<ref bean="bet5"/>
+				<ref bean="bet6"/>
+			</list>
+		</property>
+	</bean>
+		
+	<bean id="configuration1" class="domain.Configuration">
+		<property name="globalmax" value="100.0"/>
+		<property name="globalmin" value="10.0"/>
+		<property name="bets">
+			<list>
+				<ref bean="bet1"/>
+				<ref bean="bet2"/>
+			</list>
+		</property>
+		<property name="date" value="01/01/2014" />
+	</bean>
+	
+	<bean id="bet1" class="domain.AgainstTheOperator">
+		<property name="name" value="Betis vs Sevilla"/>
+		<property name="description" value="Real Betis C.F. vs Sevilla" />
+		<property name="endingDate" value="07/10/2014"/>
+		<property name="startDate" value="22/03/2014"/>
+		<property name="positiveVotes" value="10"/>
+		<property name="negativeVotes" value="0"/>
+		<property name="category" value="0"/>
+		<property name="status" value="2"/>
+		<property name="totalGambles" value="0" />
+		<property name="moderator" ref="moderator1"/>
+		<property name="configuration" ref="configuration1"/>
+		<property name="comments">
+			<list>
+				<ref bean="comment1"/>
+			</list>
+		</property>
+		<property name="gambles">
+			<list>
+				<ref bean="gamble1"/>
+			</list>
+		</property>
+		<property name="reports">
+			<list>
+				<ref bean="report1"/>
+			</list>
+		</property>
+		<property name="options">
+			<list>
+				<ref bean="betOption1"/>
+				<ref bean="betOption2"/>
+			</list>
+		</property>
+		<property name="user">
+			<ref bean="user1" />
+		</property>
+	</bean>
+	
+	<bean id="bet2" class="domain.AgainstTheOperator">
+		<property name="name" value="FIFA: Madrid vs Barcelona"/>
+		<property name="description" value="FIFA 2014: Real Madrid C.F. vs F.C. Barcelona" />
+		<property name="endingDate" value="07/07/2013"/>
+		<property name="startDate" value="22/03/2013"/>
+		<property name="positiveVotes" value="15"/>
+		<property name="negativeVotes" value="0"/>
+		<property name="category" value="3"/>
+		<property name="status" value="2"/>
+		<property name="totalGambles" value="0" />
+		<property name="moderator" ref="moderator1"/>
+		<property name="configuration" ref="configuration1"/>
+		<property name="comments">
+			<list>
+				<ref bean="comment2"/>
+			</list>
+		</property>
+		<property name="gambles">
+			<list>
+				<ref bean="gamble2"/>
+			</list>
+		</property>
+		<property name="reports">
+			<list>
+				<ref bean="report2"/>
+			</list>
+		</property>
+		<property name="options">
+			<list>
+				<ref bean="betOption3"/>
+				<ref bean="betOption4"/>
+			</list>
+		</property>
+		<property name="user">
+			<ref bean="user1" />
+		</property>
+	</bean>
+	
+	<bean id="bet3" class="domain.AgainstTheOperator">
+		<property name="name" value="Cadiz vs Jerez"/>
+		<property name="description" value="Cadiz C.F. vs Jerez C.D." />
+		<property name="endingDate" value="07/07/2013"/>
+		<property name="startDate" value="22/03/2013"/>
+		<property name="positiveVotes" value="0"/>
+		<property name="negativeVotes" value="0"/>
+		<property name="category" value="0"/>
+		<property name="status" value="0"/>
+		<property name="totalGambles" value="0" />
+		<property name="moderator" ref="moderator1"/>
+		<property name="configuration" ref="configuration1"/>
+		<property name="options">
+			<list>
+				<ref bean="betOption5"/>
+				<ref bean="betOption6"/>
+			</list>
+		</property>
+		<property name="user">
+			<ref bean="user1" />
+		</property>
+	</bean>
+	
+	<bean id="bet4" class="domain.AgainstTheOperator">
+		<property name="name" value="Juego de Tronos"/>
+		<property name="description" value="¿Cuál será la próxima muerte en la serie?" />
+		<property name="endingDate" value="07/07/2014"/>
+		<property name="startDate" value="22/03/2014"/>
+		<property name="positiveVotes" value="11"/>
+		<property name="negativeVotes" value="1"/>
+		<property name="category" value="4"/>
+		<property name="status" value="2"/>
+		<property name="totalGambles" value="0" />
+		<property name="moderator" ref="moderator1"/>
+		<property name="configuration" ref="configuration1"/>
+		<property name="options">
+			<list>
+				<ref bean="betOption7"/>
+				<ref bean="betOption8"/>
+				<ref bean="betOption9"/>
+			</list>
+		</property>
+		<property name="user">
+			<ref bean="user2" />
+		</property>
+	</bean>
+	
+	<bean id="bet5" class="domain.AgainstTheOperator">
+		<property name="name" value="Reto Ilegal"/>
+		<property name="description" value="Concurso de romper papeleras rotas" />
+		<property name="endingDate" value="07/07/2014"/>
+		<property name="startDate" value="22/03/2014"/>
+		<property name="positiveVotes" value="1"/>
+		<property name="negativeVotes" value="5"/>
+		<property name="category" value="2"/>
+		<property name="status" value="3"/>
+		<property name="totalGambles" value="0" />
+		<property name="moderator" ref="moderator1"/>
+		<property name="configuration" ref="configuration1"/>
+		<property name="options">
+			<list>
+				<ref bean="betOption10"/>
+				<ref bean="betOption11"/>
+				<ref bean="betOption12"/>
+			</list>
+		</property>
+		<property name="user">
+			<ref bean="user3" />
+		</property>
+	</bean>
+	
+	<bean id="bet6" class="domain.AgainstTheOperator">
+		<property name="name" value="Poker ETSII"/>
+		<property name="description" value="¿Quién ganará la partida de poker de la Escuela?" />
+		<property name="endingDate" value="07/07/2014"/>
+		<property name="startDate" value="22/03/2014"/>
+		<property name="positiveVotes" value="8"/>
+		<property name="negativeVotes" value="2"/>
+		<property name="category" value="1"/>
+		<property name="status" value="1"/>
+		<property name="totalGambles" value="0" />
+		<property name="moderator" ref="moderator1"/>
+		<property name="configuration" ref="configuration1"/>
+		<property name="options">
+			<list>
+				<ref bean="betOption13"/>
+				<ref bean="betOption14"/>
+				<ref bean="betOption15"/>
+			</list>
+		</property>
+		<property name="user">
+			<ref bean="user4" />
+		</property>
+	</bean>
+	
+	<bean id="comment1" class="domain.Comment">
+		<property name="positiveVotes" value="1"/>
+		<property name="negativeVotes" value="0"/>
+		<property name="text" value="Viva el Sevilla"/>
+		<property name="bet" ref="bet1"/>
+		<property name="user" ref="user1"/>
+	</bean>
+	
+	<bean id="comment2" class="domain.Comment">
+		<property name="positiveVotes" value="2"/>
+		<property name="negativeVotes" value="0"/>
+		<property name="text" value="Viva el Madrid"/>
+		<property name="bet" ref="bet2"/>
+		<property name="user" ref="user1"/>
+	</bean>
+	
+	<bean id="comment3" class="domain.Comment">
+		<property name="positiveVotes" value="7"/>
+		<property name="negativeVotes" value="3"/>
+		<property name="text" value="¡Me gusta la idea!"/>
+		<property name="bet" ref="bet4"/>
+		<property name="user" ref="user1"/>
+	</bean>
+	
+	<bean id="comment4" class="domain.Comment">
+		<property name="positiveVotes" value="5"/>
+		<property name="negativeVotes" value="1"/>
+		<property name="text" value="¡¡¡Vamos, Betis!!!"/>
+		<property name="bet" ref="bet1"/>
+		<property name="user" ref="user2"/>
+	</bean>
+	
+	<bean id="comment5" class="domain.Comment">
+		<property name="positiveVotes" value="3"/>
+		<property name="negativeVotes" value="0"/>
+		<property name="text" value="El Barça es más rápido en este FIFA"/>
+		<property name="bet" ref="bet2"/>
+		<property name="user" ref="user2"/>
+	</bean>
+	
+	<bean id="betOption1" class="domain.BetOption">
+		<property name="name" value="Betis"/>
+		<property name="rate" value="1.0"/>
+		<property name="bet" ref="bet1"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption2" class="domain.BetOption">
+		<property name="name" value="Sevilla"/>
+		<property name="rate" value="2.0"/>
+		<property name="bet" ref="bet1"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption3" class="domain.BetOption">
+		<property name="name" value="Madrid"/>
+		<property name="rate" value="2.0"/>
+		<property name="bet" ref="bet2"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption4" class="domain.BetOption">
+		<property name="name" value="Barcelona"/>
+		<property name="rate" value="1.4"/>
+		<property name="bet" ref="bet2"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption5" class="domain.BetOption">
+		<property name="name" value="Cádiz"/>
+		<property name="rate" value="1.9"/>
+		<property name="bet" ref="bet3"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption6" class="domain.BetOption">
+		<property name="name" value="Jerez"/>
+		<property name="rate" value="6.4"/>
+		<property name="bet" ref="bet3"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption7" class="domain.BetOption">
+		<property name="name" value="Fulano"/>
+		<property name="rate" value="1.2"/>
+		<property name="bet" ref="bet4"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption8" class="domain.BetOption">
+		<property name="name" value="Mengano"/>
+		<property name="rate" value="1.8"/>
+		<property name="bet" ref="bet4"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption9" class="domain.BetOption">
+		<property name="name" value="Zutano"/>
+		<property name="rate" value="2.4"/>
+		<property name="bet" ref="bet4"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption10" class="domain.BetOption">
+		<property name="name" value="5 papeleras"/>
+		<property name="rate" value="2.4"/>
+		<property name="bet" ref="bet5"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption11" class="domain.BetOption">
+		<property name="name" value="10 papeleras"/>
+		<property name="rate" value="1.6"/>
+		<property name="bet" ref="bet5"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption12" class="domain.BetOption">
+		<property name="name" value="15 papeleras"/>
+		<property name="rate" value="1.4"/>
+		<property name="bet" ref="bet5"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption13" class="domain.BetOption">
+		<property name="name" value="Mr. X"/>
+		<property name="rate" value="1.4"/>
+		<property name="bet" ref="bet6"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption14" class="domain.BetOption">
+		<property name="name" value="Mr. Y"/>
+		<property name="rate" value="2.8"/>
+		<property name="bet" ref="bet6"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="betOption15" class="domain.BetOption">
+		<property name="name" value="Mr. Z"/>
+		<property name="rate" value="1.1"/>
+		<property name="bet" ref="bet6"/>
+		<property name="correct" value="false"/>
+		<property name="nGambles" value="0"/>
+	</bean>
+	
+	<bean id="gamble1" class="domain.Gamble">
+		<property name="amount" value="50.0"/>
+		<property name="rate" value="2.0"/>
+		<property name="user" ref="user1"/>
+		<property name="bet" ref="bet1"/>
+		<property name="betOption" ref="betOption2"/>
+	</bean>
+	
+	<bean id="gamble2" class="domain.Gamble">
+		<property name="amount" value="50.0"/>
+		<property name="rate" value="2.0"/>
+		<property name="user" ref="user1"/>
+		<property name="bet" ref="bet2"/>
+		<property name="betOption" ref="betOption3"/>
+	</bean>
+	
+	<bean id="report1" class="domain.ReportBet">
+		<property name="type" value="5"/>
+		<property name="text" value="Ya existe"/>
+		<property name="bet" ref="bet1"/>
+	</bean>
+	
+	<bean id="report2" class="domain.ReportBet">
+		<property name="type" value="5"/>
+		<property name="text" value="Ya existe"/>
+		<property name="bet" ref="bet2"/>
+	</bean>
+	
+	<bean id="userVotes1" class="domain.UserVote">
+		<property name="numVotes" value="0" />
+		<property name="user" ref="user1" />
+	</bean>
+	
+	<bean id="userVotes2" class="domain.UserVote">
+		<property name="numVotes" value="0" />
+		<property name="user" ref="user2" />
+	</bean>
+	
+	<bean id="userVotes3" class="domain.UserVote">
+		<property name="numVotes" value="0" />
+		<property name="user" ref="user3" />
+	</bean>
+	
+	<bean id="userVotes4" class="domain.UserVote">
+		<property name="numVotes" value="0" />
+		<property name="user" ref="user4" />
+	</bean>
+	
+	<bean id="userVotes5" class="domain.UserVote">
+		<property name="numVotes" value="0" />
+		<property name="user" ref="user5" />
+	</bean>
+	
+	<bean id="userVotes6" class="domain.UserVote">
+		<property name="numVotes" value="0" />
+		<property name="user" ref="user6" />
+	</bean>
+	
+</beans>

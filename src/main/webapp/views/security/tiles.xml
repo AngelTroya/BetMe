@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles.xml
+ *
+* Copyright (C) 2014 Paperbet S.A.
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+	<definition name="security/login" template="/views/security/login.jsp" />
+	
+	<definition name="security/register" extends="master.page">
+		<put-attribute name="body" value="/views/security/register.jsp" />
+	</definition>
+		
+		
+</tiles-definitions>

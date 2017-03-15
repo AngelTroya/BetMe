@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles.xml
+ *
+ * Copyright (C) 2014 Paperbet S.A.
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+	
+	<definition name="bet/show" extends="master.page">	
+		<put-attribute name="title" value="Show bets" />
+		<put-attribute name="body" value="/views/bet/show.jsp" />
+	</definition>
+	
+	<definition name="bet/details" extends="master.page">	
+		<put-attribute name="title" value="Bet details" />
+		<put-attribute name="body" value="/views/bet/details.jsp" />
+	</definition>
+	
+	<definition name="bet/propose" extends="master.page">	
+		<put-attribute name="title" value="Propose a bet" />
+		<put-attribute name="body" value="/views/bet/propose.jsp" />
+	</definition>
+	
+	<definition name="bet/newComment" template="/views/bet/newComment.jsp">	
+	</definition>
+
+	<definition name="bet/edit" extends="master.page">	
+		<put-attribute name="title" value="Edit a bet" />
+		<put-attribute name="body" value="/views/bet/edit.jsp" />
+	</definition>
+	
+	<definition name="bet/report" template="/views/bet/report.jsp">	
+	</definition>
+	
+	<definition name="bet/searchAjax" template="/views/bet/showAjax.jsp">
+	</definition>
+	
+</tiles-definitions>

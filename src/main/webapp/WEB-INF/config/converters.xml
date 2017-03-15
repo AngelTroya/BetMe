@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * converters.xml
+ *
+* Copyright (C) 2014 Paperbet S.A.
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd		
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd		
+	">
+
+	<util:list id="converters">
+		<bean class="converters.UserAccountToString" />
+		<bean class="converters.StringToUserAccount" />
+		
+		<bean class="converters.ActorToString" />
+		<bean class="converters.StringToActor" />
+		
+		<bean class="converters.AdminToString" />
+		<bean class="converters.StringToAdmin" />
+		
+		<bean class="converters.AgainstTheOperatorToString" />
+		<bean class="converters.StringToAgainstTheOperator" />
+		
+		<bean class="converters.AuthorityToString" />
+		<bean class="converters.StringToAuthority" />
+		
+		<bean class="converters.BetOptionToString" />
+		<bean class="converters.StringToBetOption" />
+		
+		<bean class="converters.BetToString" />
+		<bean class="converters.StringToBet" />
+		
+		<bean class="converters.CommentToString" />
+		<bean class="converters.StringToComment" />
+		
+		<bean class="converters.ConfigurationToString" />
+		<bean class="converters.StringToConfiguration" />
+		
+		<bean class="converters.GambleToString" />
+		<bean class="converters.StringToGamble" />
+		
+		<bean class="converters.ModeratorToString" />
+		<bean class="converters.StringToModerator" />
+		
+		<bean class="converters.ReportBetToString" />
+		<bean class="converters.StringToReportBet" />
+		
+		<bean class="converters.ReportUserToString" />
+		<bean class="converters.StringToReportUser" />
+		
+		<bean class="converters.UserToString" />
+		<bean class="converters.StringToUser" />
+		
+		<bean class="converters.WinWinForBothToString" />
+		<bean class="converters.StringToWinWinForBoth" />
+		
+		<bean class="converters.UserVoteToString" />
+		<bean class="converters.StringToUserVote" />
+	</util:list>
+
+</beans>

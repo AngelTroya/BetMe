@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles_es.xml
+ *
+ * Copyright (C) 2014 Paperbet S.A.
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+      
+<tiles-definitions>
+
+	<definition name="user/showdetails" extends="master.page">	
+		<put-attribute name="title" value="Ver datos persoais" />
+		<put-attribute name="body" value="/views/user/showdetails.jsp" />
+	</definition>
+	
+	<definition name="user/editdetails" extends="master.page">	
+		<put-attribute name="title" value="Editar datos persoais" />
+		<put-attribute name="body" value="/views/user/editdetails.jsp" />
+	</definition>
+	
+	<definition name="user/report" template="/views/user/report.jsp">	
+	</definition>
+	
+</tiles-definitions>

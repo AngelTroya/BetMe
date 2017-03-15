@@ -1,0 +1,357 @@
+/* common.css
+ *
+ * Copyright (C) 2014 Paperbet S.A.
+ */
+.input-errors{
+	border-color: red;
+	color: red;
+	font-weight: bolder;
+}
+
+.error {
+	color: red;
+	font-weight: bolder;
+}
+
+.message {
+	color: red;
+	font-weight: bolder;
+}
+
+body{
+	padding-bottom: 70px;
+	margin: 25px 25px 25px 10px;
+}
+
+a:link.terms{
+	color: #777;
+	text-decoration:none;
+}
+
+a:visited.terms{
+	color: #777;
+	text-decoration:none;
+}
+
+a:hover.terms{
+	color: #777;
+	text-decoration: underline;
+}
+
+a:active.terms{
+	color: #777;
+	text-decoration:none;
+}
+
+div.images{
+	width: 250px;
+}
+
+div.form-left{
+	display:inline-block; 
+	float:left;
+	width:50%;
+	height: 250px;
+}
+div.form-right{
+	display:inline-block; 
+	width:50%;
+	height: 250px;
+}
+button.profile{
+	width:100%;
+	text-align: center;
+}
+
+div.center{
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.profileButtons{
+	display:block;
+	margin-top:10px;
+}
+
+aside.profile{
+	width: 20%;
+	float: left;
+	display:inline-block;
+}
+
+section.profile{
+	width: 60%;
+	display:inline-block;
+}
+
+div.form-account{
+	border:1px solid;
+	border-radius: 10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	margin: 10px;
+	padding-top: 10px;
+}
+
+.signUpForm{
+	padding-right: 0px;
+}
+
+.list-item{padding-bottom:.25em}.list-remove{display:none}
+
+.label {
+    display: block;
+    white-space:nowrap;
+}
+
+.btn.betme{
+	margin:10px 0px 0px 0px;
+	background-color:#333;
+	color:#eee;
+}
+
+
+.comment-photo{
+	height: 64px;
+}
+
+img.comment-responsive{
+	max-height: 100%;
+	width: auto;
+}
+
+p.comment-header{
+	font-size: 22px;
+	margin-top:5px;
+	font-weight: bold;
+}
+
+p.comment-body{
+	font-size:22px;	
+}
+
+.vote{
+	margin:3px;
+	margin-left:10px;
+}
+
+.pointer{
+	cursor:pointer;
+}
+.comment-panel{
+	border: 1px solid black; 
+	padding: 5px;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+#fl_menu{position:absolute; top:50px; right:25px; z-index:9999; height:50px; background:#333}
+
+
+.btn-primary2 {
+  color: #fff;
+  background-color: #A0C5E4; /*#428bca; initial css */ 
+  border-color: #357ebd;
+}
+.btn-primary2:hover,
+.btn-primary2:focus,
+.btn-primary2:active,
+.btn-primary2.active,
+.open .dropdown-toggle.btn-primary2 {
+  color: #fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+.btn-primary2:active,
+.btn-primary2.active,
+.open .dropdown-toggle.btn-primary2 {
+  background-image: none;
+}
+.btn-primary2.disabled,
+.btn-primary2[disabled],
+fieldset[disabled] .btn-primary2,
+.btn-primary2.disabled:hover,
+.btn-primary2[disabled]:hover,
+fieldset[disabled] .btn-primary2:hover,
+.btn-primary2.disabled:focus,
+.btn-primary2[disabled]:focus,
+fieldset[disabled] .btn-primary2:focus,
+.btn-primary2.disabled:active,
+.btn-primary2[disabled]:active,
+fieldset[disabled] .btn-primary2:active,
+.btn-primary2.disabled.active,
+.btn-primary2[disabled].active,
+fieldset[disabled] .btn-primary2.active {
+  background-color: #A0C5E4;
+  border-color: #357ebd;
+}
+.btn-primary2 .badge {
+  color: #A0C5E4;
+  background-color: #fff;
+}
+
+.btn-success2{
+  color: #fff;
+  background-color: #9DD49D  ;/*#5cb85c; old css*/
+  border-color: #4cae4c;
+}
+.btn-success2:hover,
+.btn-success2:focus,
+.btn-success2:active,
+.btn-success2.active,
+.open .dropdown-toggle.btn-success2{
+  color: #fff;
+  background-color: #47a447;
+  border-color: #398439;
+}
+.btn-success2:active,
+.btn-success2.active,
+.open .dropdown-toggle.btn-success2{
+  background-image: none;
+}
+.btn-success2.disabled,
+.btn-success2[disabled],
+fieldset[disabled] .btn-success2,
+.btn-success2.disabled:hover,
+.btn-success2[disabled]:hover,
+fieldset[disabled] .btn-success2:hover,
+.btn-success2.disabled:focus,
+.btn-success2[disabled]:focus,
+fieldset[disabled] .btn-success2:focus,
+.btn-success2.disabled:active,
+.btn-success2[disabled]:active,
+fieldset[disabled] .btn-success2:active,
+.btn-success2.disabled.active,
+.btn-success2[disabled].active,
+fieldset[disabled] .btn-success2.active {
+  background-color:#9DD49D;
+  border-color: #4cae4c;
+}
+.btn-success2.badge {
+  color: #9DD49D;
+  background-color: #fff;
+}
+.btn-info2 {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.btn-info2:hover,
+.btn-info2:focus,
+.btn-info2:active,
+.btn-info2.active,
+.open .dropdown-toggle.btn-info2 {
+  color: #fff;
+  background-color: #39b3d7;
+  border-color: #269abc;
+}
+.btn-info2:active,
+.btn-info2.active,
+.open .dropdown-toggle.btn-info2 {
+  background-image: none;
+}
+.btn-info2.disabled,
+.btn-info2[disabled],
+fieldset[disabled] .btn-info2,
+.btn-info2.disabled:hover,
+.btn-info2[disabled]:hover,
+fieldset[disabled] .btn-info2:hover,
+.btn-info2.disabled:focus,
+.btn-info2[disabled]:focus,
+fieldset[disabled] .btn-info2:focus,
+.btn-info2.disabled:active,
+.btn-info2[disabled]:active,
+fieldset[disabled] .btn-info2:active,
+.btn-info2.disabled.active,
+.btn-info2[disabled].active,
+fieldset[disabled] .btn-info2.active {
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+.btn-info2 .badge {
+  color: #5bc0de;
+  background-color: #fff;
+}
+.btn-warning2 {
+  color: #fff;
+  background-color: #F8D6A6;            /*#f0ad4e; old css*/
+  border-color: #eea236;
+}
+.btn-warning2:hover,
+.btn-warning2:focus,
+.btn-warning2:active,
+.btn-warning2.active,
+.open .dropdown-toggle.btn-warning2 {
+  color: #fff;
+  background-color:  #f0ad4e;
+  border-color: #d58512;
+}
+.btn-warning2:active,
+.btn-warning2.active,
+.open .dropdown-toggle.btn-warning2 {
+  background-image: none;
+}
+.btn-warning2.disabled,
+.btn-warning2[disabled],
+fieldset[disabled] .btn-warning2,
+.btn-warning2.disabled:hover,
+.btn-warning2[disabled]:hover,
+fieldset[disabled] .btn-warning2:hover,
+.btn-warning2.disabled:focus,
+.btn-warning2[disabled]:focus,
+fieldset[disabled] .btn-warning2:focus,
+.btn-warning2.disabled:active,
+.btn-warning2[disabled]:active,
+fieldset[disabled] .btn-warning2:active,
+.btn-warning2.disabled.active,
+.btn-warning2[disabled].active,
+fieldset[disabled] .btn-warning2.active {
+  background-color:#F8D6A6;
+  border-color: #eea236;
+}
+.btn-warning2 .badge {
+  color: #f0ad4e;
+  background-color: #fff;
+}
+.btn-danger2 {
+  color: #fff;
+  background-color:  #ECA9A7;
+  border-color: #d43f3a;
+}
+.btn-danger2:hover,
+.btn-danger2:focus,
+.btn-danger2:active,
+.btn-danger2.active,
+.open .dropdown-toggle.btn-danger2 {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #ac2925;
+}
+.btn-danger2:active,
+.btn-danger2.active,
+.open .dropdown-toggle.btn-danger2 {
+  background-image: none;
+}
+.btn-danger2.disabled,
+.btn-danger2[disabled],
+fieldset[disabled] .btn-danger2,
+.btn-danger2.disabled:hover,
+.btn-danger2[disabled]:hover,
+fieldset[disabled] .btn-danger2:hover,
+.btn-danger2.disabled:focus,
+.btn-danger2[disabled]:focus,
+fieldset[disabled] .btn-danger2:focus,
+.btn-danger2.disabled:active,
+.btn-danger2[disabled]:active,
+fieldset[disabled] .btn-danger2:active,
+.btn-danger2.disabled.active,
+.btn-danger2[disabled].active,
+fieldset[disabled] .btn-danger2.active {
+  background-color:#ECA9A7;
+  border-color: #d43f3a;
+}
+.btn-danger2 .badge {
+  color: #ECA9A7 ; /* #d9534f; old css*/
+  background-color: #fff;
+}
